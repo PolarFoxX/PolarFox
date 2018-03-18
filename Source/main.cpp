@@ -106,7 +106,22 @@ int main()
 				cin >> PlaceOfObj;
 				cout << endl;
 				cout << "Enter count of objects:";
-				cin >> OnjCount;
+				
+				//cin >> OnjCount;
+				/*if(!cin)
+				{
+					do
+					{
+						cout << "Invalid number, please enter again:";
+						cin >> OnjCount;
+					} while (!cin);
+				}*/
+				while (!(cin >> OnjCount))
+				{
+					cout << "Invalid number, please enter again:";
+					cin.clear();
+					fflush(stdin);
+				}
 				CurObj Buff(ObjName, PlaceOfObj, OnjCount);
 				ObjsInRoom.push_back(Buff);
 				system("cls");
@@ -125,14 +140,20 @@ int main()
 				}
 				cout << endl << "Enter index of object to delete or enter 0 to cancel:";
 				int ObjToDel = 0;
-				cin >> ObjToDel;
+				//cin >> ObjToDel;
+				while (!(cin >> ObjToDel))
+				{
+					cout << "Invalid number, please enter again:";
+					cin.clear();
+					fflush(stdin);
+				}
 				if (ObjToDel == 0)
 				{
 					system("cls");
 					CallMenu();
 					break;
 				}
-				else if (ObjToDel > 0 && ObjToDel < ObjsInRoom.size())
+				else if (ObjToDel > 0 && ObjToDel < ObjsInRoom.size() + 1)
 				{
 					ObjsInRoom.erase(ObjsInRoom.begin() + ObjToDel - 1);
 					system("cls");
