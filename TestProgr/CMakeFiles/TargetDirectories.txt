@@ -1,0 +1,3 @@
+G:/Documents/Progr/Uchet/Bin/CMakeFiles/test.dir
+G:/Documents/Progr/Uchet/Bin/CMakeFiles/ALL_BUILD.dir
+G:/Documents/Progr/Uchet/Bin/CMakeFiles/ZERO_CHECK.dir
